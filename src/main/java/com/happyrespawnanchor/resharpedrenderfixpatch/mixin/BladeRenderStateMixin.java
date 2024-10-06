@@ -16,10 +16,8 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import static mods.flammpfeil.slashblade.client.renderer.util.BladeRenderState.renderOverrided;
 
 @Mixin(BladeRenderState.class)
-public abstract class BladeRenderStateMixin {
-    @Shadow
-    public static void renderOverrided(ItemStack stack, WavefrontObject model, String target, ResourceLocation texture, PoseStack matrixStackIn, MultiBufferSource bufferIn, int packedLightIn) {
-    }
+public class BladeRenderStateMixin {
+
 
     @Inject(at = @At("TAIL"), method = "renderOverrided(Lnet/minecraft/world/item/ItemStack;Lmods/flammpfeil/slashblade/client/renderer/model/obj/WavefrontObject;Ljava/lang/String;Lnet/minecraft/resources/ResourceLocation;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;I)V", remap = false)
     private static void renderOverridedMixin(ItemStack stack, WavefrontObject model, String target, ResourceLocation texture, PoseStack matrixStackIn, MultiBufferSource bufferIn, int packedLightIn, CallbackInfo ci) {
