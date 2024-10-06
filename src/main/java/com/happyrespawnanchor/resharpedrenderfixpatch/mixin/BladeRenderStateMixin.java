@@ -12,7 +12,7 @@ import static mods.flammpfeil.slashblade.client.renderer.util.BladeRenderState.r
 
 @Mixin(BladeRenderState.class)
 public class BladeRenderStateMixin {
-    @Inject(at = @At("TAIL"), target = "renderOverrided", remap = false)
+    @Inject(at = @At("TAIL"), method = "renderOverrided*", remap = false)
     public void renderOverridedMixin(CallbackInfo ci) {
         renderOverrided(stack, model, target, texture, matrixStackIn, bufferIn,
         packedLightIn, Util.memoize(BladeRenderState::getSlashBladeBlend), true);
