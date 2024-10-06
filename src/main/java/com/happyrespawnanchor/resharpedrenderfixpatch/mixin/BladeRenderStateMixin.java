@@ -17,12 +17,14 @@ import static mods.flammpfeil.slashblade.client.renderer.util.BladeRenderState.r
 
 @Mixin(BladeRenderState.class)
 public abstract class BladeRenderStateMixin {
-    @Shadow public abstract void renderOverrided(ItemStack stack, WavefrontObject model, String target, ResourceLocation texture, PoseStack matrixStackIn, MultiBufferSource bufferIn, int packedLightIn);
+    @Shadow
+    public static void renderOverrided(ItemStack stack, WavefrontObject model, String target, ResourceLocation texture, PoseStack matrixStackIn, MultiBufferSource bufferIn, int packedLightIn) {
+    }
 
-    @Inject(at = @At("TAIL"), method = "renderOverrided*", remap = false)
-    public void renderOverridedMixin(CallbackInfo ci) {
-        renderOverrided(stack, model, target, texture, matrixStackIn, bufferIn,
-        packedLightIn, Util.memoize(BladeRenderState::getSlashBladeBlend), true;
+    @Inject(at = @At("TAIL"), method = "renderOverrided(Lnet/minecraft/world/item/ItemStack;Lmods/flammpfeil/slashblade/client/renderer/model/obj/WavefrontObject;Ljava/lang/String;Lnet/minecraft/resources/ResourceLocation;Lcom/mojang/blaze3d/vertex/PoseStack;Lnet/minecraft/client/renderer/MultiBufferSource;I)V", remap = false)
+    private static void renderOverridedMixin(ItemStack stack, WavefrontObject model, String target, ResourceLocation texture, PoseStack matrixStackIn, MultiBufferSource bufferIn, int packedLightIn, CallbackInfo ci) {
+         BladeRenderState.renderOverrided(stack, model, target, texture, matrixStackIn, bufferIn,
+         packedLightIn, Util.memoize(BladeRenderState::getSlashBladeBlend), true);
 
     }
 }
