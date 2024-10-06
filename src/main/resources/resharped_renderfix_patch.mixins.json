@@ -3,7 +3,7 @@
   "minVersion": "0.8",
   "package": "com.happyrespawnanchor.resharpedrenderfixpatch.mixin",
   "compatibilityLevel": "JAVA_17",
-  "refmap": "ixins.resharped_renderfix_patch.refmap.json",
+  "refmap": "resharped_renderfix_patch.refmap.json",
   "mixins": [
   ],
   "client": [
