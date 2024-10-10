@@ -1,5 +1,9 @@
 # SlashBlade Resharped RenderFix Patch
-### [Modrinth](https://modrinth.com/mod/slashblade-resharped-renderfix-patch) | [CurseForge](https://www.curseforge.com/minecraft/mc-mods/slashblade-resharped-renderfix-patch) | McMod
+
+# [SLASHBLADE: RESHARPED](https://modrinth.com/mod/slashblade-resharped) VERSION 1.1.5 HAS FIXED THIS ISSUE. DO NOT USE THIS PATCH.
+---
+
+### [Modrinth](https://modrinth.com/mod/slashblade-resharped-renderfix-patch) | [CurseForge](https://www.curseforge.com/minecraft/mc-mods/slashblade-resharped-renderfix-patch) | [McMod](https://www.mcmod.cn/class/16753.html)
 
 This mod fixes the blade rendering problem in [SlashBlade: Resharped](https://github.com/0999312/SlashBlade_Resharped).([#18](https://github.com/0999312/SlashBlade_Resharped/issues/18))
 
